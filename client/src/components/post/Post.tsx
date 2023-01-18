@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
 import "./Post.scss";
+type PostProps = {
+  img: string;
+};
 
-const Post: React.FC = ({ img: string }) => {
+const Post: React.FC<PostProps> = (props) => {
   return (
     <div className="post">
-      <img className="postImg" src={img} alt="" />
+      <img className="postImg" src={props.img} alt="" />
       <div className="postInfo">
         <div className="postCats">
           <span className="postCat">
