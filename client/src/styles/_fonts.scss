@@ -1,0 +1,28 @@
+@font-face {
+  font-family: "Nunito Sans";
+  src: local("Nunito Sans"),
+    url(../assets/fonts/Nunito/NunitoSans-Regular.ttf) format("ttf");
+}
+@font-face {
+  font-family: "Nunito Sans-Light";
+  src: local("Nunito Sans-Light"),
+    url(../assets/fonts/Nunito/NunitoSans-Light.ttf) format("ttf");
+}
+@font-face {
+  font-family: "Nunito Sans-Bold";
+  src: local("Nunito Sans-Bold"),
+    url(../assets/fonts/Nunito/NunitoSans-Bold.ttf) format("ttf");
+}
+@font-face {
+  font-family: "Sora";
+  src: local("Sora"), url(../assets/fonts/Sora/Sora-Regular.ttf) format("ttf");
+}
+@font-face {
+	font-family: "Sora-Bold";
+	src: local("Sora-Bold"), url(../assets/fonts/Sora/Sora-Bold.ttf) format("ttf");
+}
+
+$Sora: Sora, sans-serif;
+$SoraBold: Sora-Bold, sans-serif;
+$Nunito: Nunito Sans, sans-serif;
+$NunitoBold: Nunito Sans, sans-serif;
