@@ -5,16 +5,23 @@ import "./Write.scss";
 const Write: React.FC = () => {
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
-  const [file, setFile] = useState(null);
+  const [file, setFile] = useState<File | null>(null);
   const { user } = useContext(Context);
 
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    const newPost = {
+    interface INewPost {
+      username: any;
+      title: string;
+      desc: string;
+      photo?: any;
+    }
+    const newPost: INewPost = {
       username: user.username,
       title,
       desc,
     };
+
     if (file) {
       const data = new FormData();
       const filename = Date.now() + file.name;
@@ -23,12 +30,16 @@ const Write: React.FC = () => {
       newPost.photo = filename;
       try {
         await axios.post("/upload", data);
-      } catch (err) {}
+      } catch (err) {
+        console.log(err);
+      }
     }
     try {
       const res = await axios.post("/posts", newPost);
       window.location.replace("/post/" + res.data._id);
-    } catch (err) {}
+    } catch (err) {
+      console.log(err);
+    }
   };
   return (
     <div className="write">
@@ -44,7 +55,13 @@ const Write: React.FC = () => {
             type="file"
             id="fileInput"
             style={{ display: "none" }}
-            onChange={(e) => setFile(e.target.files[0])}
+            onChange={(e) => {
+              if (!e.target.files) {
+                return;
+              } else {
+                setFile(e.target.files[0]);
+              }
+            }}
           />
           <input
             type="text"
@@ -57,7 +74,6 @@ const Write: React.FC = () => {
         <div className="writeFormGroup">
           <textarea
             placeholder="Tell your story..."
-            type="text"
             className="writeInput writeText"
             onChange={(e) => setDesc(e.target.value)}
           ></textarea>
