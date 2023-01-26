@@ -1,11 +1,11 @@
-"./Header.scss";
+import "./Header.scss";
 
 const Header: React.FC = () => {
   return (
     <div className="header">
       <div className="headerTitles">
-        <span className="headerTitleSm">React & Node</span>
-        <span className="headerTitleLg">BLOG</span>
+        <span className="headerTitleSm">Retro</span>
+        <span className="headerTitleLg">LOG</span>
       </div>
       <img
         className="headerImg"
