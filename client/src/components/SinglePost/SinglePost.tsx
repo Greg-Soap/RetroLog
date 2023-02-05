@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { Context } from "../../Context/context";
 import { IPost } from "../posts/Posts";
 import "./SinglePost.scss";
 

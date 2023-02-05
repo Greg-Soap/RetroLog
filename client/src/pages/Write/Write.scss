@@ -48,15 +48,18 @@
           color: rgb(189, 185, 185);
           font-weight: 400;
         }
-        :focus {
-          outline-style: none;
-        }
+      }
+      :focus-visible {
+        outline: none;
       }
       .writeText {
         width: 70vw;
         height: 100vh;
         font-family: inherit;
         font-size: 20px;
+        :focus-visible {
+          outline: none;
+        }
       }
     }
   }
