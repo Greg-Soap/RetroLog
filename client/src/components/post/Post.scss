@@ -62,8 +62,6 @@
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
-    @include mobile {
-      padding: 1rem;
-    }
+    padding: 1rem;
   }
 }

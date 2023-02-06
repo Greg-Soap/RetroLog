@@ -8,7 +8,9 @@ const Sidebar: React.FC = () => {
 
   useEffect(() => {
     const getCats = async () => {
-      const res = await axios.get(process.env.SERVER_URL + "/categories");
+      const res = await axios.get(
+        process.env.REACT_APP_SERVER_URL + "/categories"
+      );
       setCats(res.data);
     };
     getCats();

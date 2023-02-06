@@ -7,7 +7,7 @@ import "./Navbar.scss";
 
 const Navbar = () => {
   const { user, dispatch } = useContext(Context);
-  const PF = process.env.PF;
+  const PF = process.env.REACT_APP_PF;
   let isPageWide = UseMediaQuery("(min-width: 769px)");
 
   const handleLogout = () => {

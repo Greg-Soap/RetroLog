@@ -9,7 +9,7 @@ const SinglePost = () => {
   const location = useLocation();
   const path = location.pathname.split("/")[2];
   const [post, setPost] = useState<IPost>(Object);
-  const PF = process.env.PF;
+  const PF = process.env.REACT_APP_PF;
   const { user } = useContext(Context);
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
@@ -17,7 +17,9 @@ const SinglePost = () => {
 
   useEffect(() => {
     const getPost = async () => {
-      const res = await axios.get(process.env.SERVER_URL + "/posts/" + path);
+      const res = await axios.get(
+        process.env.REACT_APP_SERVER_URL + "/posts/" + path
+      );
       setPost(res.data);
       setTitle(res.data.title);
       setDesc(res.data.desc);
@@ -27,13 +29,16 @@ const SinglePost = () => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(process.env.SERVER_URL + `/posts/${post._id}`, {
-        data: { username: user.username },
-      });
+      await axios.delete(
+        process.env.REACT_APP_SERVER_URL + `/posts/${post._id}`,
+        {
+          data: { username: user.username },
+        }
+      );
       window.location.replace("/");
     } catch (err) {}
   };
-
+  console.log(process.env.REACT_APP_SERVER_URL);
   const handleUpdate = async () => {
     try {
       await axios.put(`/posts/${post._id}`, {
