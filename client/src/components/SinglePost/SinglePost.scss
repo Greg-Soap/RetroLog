@@ -1,3 +1,4 @@
+@import "../../styles/breakpoints";
 .singlePost {
   flex: 9;
   .singlePostWrapper {
@@ -10,6 +11,9 @@
       height: 300px;
       border-radius: 5px;
       object-fit: cover;
+      @include mobile {
+        width: 90vw;
+      }
     }
     .singlePostTitleInput {
       margin: 10px;

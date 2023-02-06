@@ -1,3 +1,4 @@
+@import "../../styles/breakpoints";
 .write {
   padding-top: 50px;
   .writeImg {
@@ -6,6 +7,10 @@
     height: 250px;
     border-radius: 10px;
     object-fit: cover;
+    @include mobile {
+      margin-left: 1rem;
+      width: 90vw;
+    }
   }
   .writeForm {
     position: relative;
@@ -22,11 +27,18 @@
       cursor: pointer;
       display: flex;
       align-items: center;
+      @include mobile {
+        top: 85vh;
+        position: fixed;
+      }
     }
     .writeFormGroup {
       margin-left: 150px;
       display: flex;
       align-items: center;
+      @include mobile {
+        margin-left: 1rem;
+      }
       .writeIcon {
         width: 25px;
         height: 25px;
@@ -54,7 +66,7 @@
       }
       .writeText {
         width: 70vw;
-        height: 100vh;
+        height: 80vh;
         font-family: inherit;
         font-size: 20px;
         :focus-visible {

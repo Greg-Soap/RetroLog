@@ -7,13 +7,13 @@ import "./Login.scss";
 const Login: React.FC = () => {
   const userRef: any = useRef();
   const passwordRef: any = useRef();
-  const { user, dispatch, isFetching } = useContext(Context);
+  const { dispatch, isFetching } = useContext(Context);
 
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     dispatch({ type: "LOGIN_START" });
     try {
-      const res = await axios.post("/auth/login", {
+      const res = await axios.post("http://localhost:5000/api/auth/login", {
         username: userRef.current!.value,
         password: passwordRef.current!.value,
       });
@@ -22,7 +22,6 @@ const Login: React.FC = () => {
       dispatch({ type: "LOGIN_FAILURE" });
     }
   };
-  console.log(user);
   return (
     <div className="login">
       <span className="loginTitle">Login</span>

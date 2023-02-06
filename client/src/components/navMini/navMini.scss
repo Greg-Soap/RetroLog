@@ -1,15 +1,67 @@
 .topMini {
-  width: 100%;
   height: 50px;
   background-color: white;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   align-items: center;
+  justify-content: space-around;
   z-index: 999;
   font-family: "Josefin Sans", sans-serif;
+  transition: all 0.3s ease-in-out;
   .topLeft {
-    flex: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    .topImg {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 15px;
+      cursor: pointer;
+    }
+    .topList {
+      display: flex;
+      position: absolute;
+      top: 45px;
+      justify-content: center;
+      flex-direction: column;
+      margin: 0;
+      left: 0;
+      padding: 0.5rem;
+      padding-left: 0;
+      background-color: white;
+      list-style: none;
+      transition: all 0.3s ease-in-out;
+
+      .topListItem {
+        margin-right: 20px;
+        font-size: 18px;
+        font-weight: 300;
+        text-decoration: none;
+        padding: 0.5rem;
+        text-transform: uppercase;
+        color: #444;
+        cursor: pointer;
+        :hover {
+          color: gray;
+        }
+      }
+    }
+  }
+  .topCenter {
+    text-transform: uppercase;
+
+    .title {
+      color: #444;
+      text-decoration: dotted;
+    }
+  }
+  .topRight {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,58 +72,7 @@
       cursor: pointer;
     }
   }
-  .topCenter {
-    flex: 6;
-    .topList {
-      display: flex;
-      justify-content: center;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      .topListItem {
-        margin-right: 20px;
-        font-size: 18px;
-        font-weight: 300;
-        cursor: pointer;
-        :hover {
-          color: gray;
-        }
-      }
-    }
-  }
-  .topRight {
-    flex: 3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    .topImg {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-right: 15px;
-      cursor: pointer;
-    }
-    .topSearchIcon {
-      font-size: 18px;
-      color: #666;
-      cursor: pointer;
-    }
-    .topList {
-      display: flex;
-      justify-content: center;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      .topListItem {
-        margin-right: 20px;
-        font-size: 18px;
-        font-weight: 300;
-        cursor: pointer;
-        :hover {
-          color: gray;
-        }
-      }
-    }
-  }
+}
+.colorChange {
+  box-shadow: 0 1px 0 rgb(0 0 0 / 10%);
 }

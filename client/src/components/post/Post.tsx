@@ -5,7 +5,7 @@ import "./Post.scss";
 const Post = ({ post }: { post: IPost }) => {
   const PF = "http://localhost:5000/images/";
   return (
-    <div className="post">
+    <div className="post" key={post._id}>
       {post.photo && <img className="postImg" src={PF + post.photo} alt="" />}
       <div className="postInfo">
         <div className="postCats">

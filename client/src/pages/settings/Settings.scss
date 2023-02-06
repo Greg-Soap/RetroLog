@@ -1,5 +1,10 @@
+@import "../../styles/breakpoints";
+
 .settings {
   display: flex;
+  @include mobile {
+    margin-top: 50px;
+  }
   .settingsWrapper {
     flex: 9;
     padding: 20px;
