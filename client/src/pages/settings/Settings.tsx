@@ -12,7 +12,7 @@ export default function Settings() {
   const [success, setSuccess] = useState(false);
 
   const { user, dispatch } = useContext(Context);
-  const PF = "http://localhost:5000/images/";
+  const PF = process.env.PF;
 
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
@@ -42,7 +42,7 @@ export default function Settings() {
     }
     try {
       const res = await axios.put(
-        "http://localhost:5000/api/users/" + user._id,
+        process.env.SERVER_URL + "/users/" + user._id,
         updatedUser
       );
       setSuccess(true);

@@ -29,13 +29,13 @@ const Write: React.FC = () => {
       data.append("file", file);
       newPost.photo = filename;
       try {
-        await axios.post("/upload", data);
+        await axios.post(process.env.SERVER_URL + "/upload", data);
       } catch (err) {
         console.log(err);
       }
     }
     try {
-      const res = await axios.post("/posts", newPost);
+      const res = await axios.post(process.env.SERVER_URL + "/posts", newPost);
       window.location.replace("/post/" + res.data._id);
     } catch (err) {
       console.log(err);

@@ -5,7 +5,7 @@ import Avatar from "../../assets/avatar.png";
 import "./navMini.scss";
 
 export default function NavMini() {
-  const PF = "http://localhost:5000/images/";
+  const PF = process.env.PF;
   const { user, dispatch } = useContext(Context);
   const [dropdown, setDropdown] = useState(false);
   const handleClose = () => {

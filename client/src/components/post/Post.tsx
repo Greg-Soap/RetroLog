@@ -3,7 +3,7 @@ import { IPost } from "../posts/Posts";
 import "./Post.scss";
 
 const Post = ({ post }: { post: IPost }) => {
-  const PF = "http://localhost:5000/images/";
+  const PF = process.env.PF;
   return (
     <div className="post" key={post._id}>
       {post.photo && <img className="postImg" src={PF + post.photo} alt="" />}

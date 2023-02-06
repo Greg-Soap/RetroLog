@@ -7,7 +7,7 @@ import "./Navbar.scss";
 
 const Navbar = () => {
   const { user, dispatch } = useContext(Context);
-  const PF = "http://localhost:5000/images/";
+  const PF = process.env.PF;
   let isPageWide = UseMediaQuery("(min-width: 769px)");
 
   const handleLogout = () => {
