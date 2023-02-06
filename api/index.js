@@ -13,6 +13,7 @@ dotenv.config();
 app.use(express.json());
 app.use("/images", express.static(path.join(__dirname, "/images")));
 app.use(cors());
+let PORT = "5000";
 
 mongoose
   .connect(process.env.MONGO_URL, {
@@ -32,13 +33,16 @@ const storage = multer.diskStorage({
     cb(null, req.body.name);
   },
 });
+app.get("/", (req, res) => {
+  res.send("hello world");
+});
 
 const upload = multer({ storage: storage });
 app.post("/api/upload", upload.single("file"), (req, res) => {
   res.status(200).json("File has been uploaded");
 });
-app.listen("5000", () => {
-  console.log("Backend is running.");
+app.listen(PORT, () => {
+  console.log(`Backend is running on ${PORT}`);
 });
 
 app.use("/api/auth", authRoute);

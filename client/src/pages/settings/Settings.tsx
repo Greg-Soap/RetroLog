@@ -42,7 +42,7 @@ export default function Settings() {
     }
     try {
       const res = await axios.put(
-        process.env.SERVER_URL + "/users/" + user._id,
+        process.env.REACT_APP_SERVER_URL + "/users/" + user._id,
         updatedUser
       );
       setSuccess(true);

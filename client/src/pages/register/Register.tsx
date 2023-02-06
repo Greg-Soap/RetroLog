@@ -13,11 +13,14 @@ const Register: React.FC = () => {
     e.preventDefault();
     setError(false);
     try {
-      const res = await axios.post(process.env.SERVER_URL + "/auth/register", {
-        username,
-        email,
-        password,
-      });
+      const res = await axios.post(
+        process.env.REACT_APP_SERVER_URL + "/auth/register",
+        {
+          username,
+          email,
+          password,
+        }
+      );
       res.data && window.location.replace("/login");
     } catch (err) {
       setError(true);
